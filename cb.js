@@ -1,7 +1,7 @@
-function Mybot(){
-  this.posssibleInput = [['Hello', "What's up", " How're you doing?"], ["How much does a dollor cost in naira", "who made you?", " when were you created?"], ["what are you made of?", "where do you live?"]];
+function Mybot(name){
+  this.posssibleInput = [['Hello', "What's up", " How are you doing?"], ["What is your name", "who made you?", " when were you created?"], ["what are you made of?", "where do you live?"]];
   
-  this.replies = [["Hi", "I'm good", " I'm fine, trust you're too"], ["N550", "My boss", " A very long time ago"], ["I'm made of a high level language", "That's none of your business. Goodbye!"]];
+  this.replies = [["Hi", "I'm good", " I'm fine, trust you're too"], ["I am " + name, "My boss", " A very long time ago"], ["I'm made of a high level language", "That's none of your business. Goodbye!"]];
   this.chatBody = document.createElement("div");
   this.chatBody.setAttribute('class', 'body');
   this.messageBody = document.createElement("div");
@@ -51,7 +51,8 @@ function Mybot(){
       while (y < innerMessage.length){
         var message = innerMessage[y];
         var check = userMessage.includes(message);
-        if (check==true){
+        var check2 = userMessage.includes(message.toLowerCase());
+        if (check==true || check2 == true){
           var innerReplies = obj.replies[x];
           obj.botReply(innerReplies[y]);
         }
@@ -69,5 +70,5 @@ function Mybot(){
     };
   
 }
-var chat1 = new Mybot();
+var chat1 = new Mybot("Alexei");
 chat1.start();
