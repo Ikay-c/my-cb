@@ -1,5 +1,5 @@
 function Mybot(name){
-  this.posssibleInput = [['Hello', "What's up", " How are you doing?"], ["What is your name", "who made you?", " when were you created?"], ["what are you made of?", "where do you live?"]];
+  this.posssibleInput = [['hello', "what's up", " how are you doing?"], ["what is your name", "who made you?", " when were you created?"], ["what are you made of?", "where do you live"]];
   
   this.replies = [["Hi", "I'm good", " I'm fine, trust you're too"], ["I am " + name, "My boss", " A very long time ago"], ["I'm made of a high level language", "That's none of your business. Goodbye!"]];
   this.chatBody = document.createElement("div");
@@ -42,6 +42,7 @@ function Mybot(name){
   function chat(){
     var userMessage = obj.messageBox.value;
     obj.receive(userMessage);
+    var userMsg = userMessage.toLowerCase();
     console.log(userMessage);
     obj.messageBox.value = null;
     var x = 0;
@@ -50,9 +51,8 @@ function Mybot(name){
       var y = 0;
       while (y < innerMessage.length){
         var message = innerMessage[y];
-        var check = userMessage.includes(message);
-        var check2 = userMessage.includes(message.toLowerCase());
-        if (check==true || check2 == true){
+        var check = userMsg.includes(message);
+        if (check==true){
           var innerReplies = obj.replies[x];
           obj.botReply(innerReplies[y]);
         }
