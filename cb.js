@@ -51,7 +51,7 @@ function Mybot(name){
       var y = 0;
       while (y < innerMessage.length){
         var message = innerMessage[y];
-        var check = userMsg.includes(message);
+        var check = message.includes(userMsg);
         if (check==true){
           var innerReplies = obj.replies[x];
           obj.botReply(innerReplies[y]);
