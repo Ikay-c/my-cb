@@ -43,7 +43,7 @@ function Mybot(name){
     var userMessage = obj.messageBox.value;
     obj.receive(userMessage);
     var userMsg = userMessage.toLowerCase();
-    console.log(userMessage);
+    //console.log(userMessage);
     obj.messageBox.value = null;
     var x = 0;
     while (x<obj.posssibleInput.length){
