@@ -1,5 +1,5 @@
 function Mybot(name){
-  this.posssibleInput = [['hello', "what's up", " how are you doing?"], ["what is your name", "who made you?", " when were you created?"], ["what are you made of?", "where do you live"]];
+  this.posssibleInput = [['hello', "what's up", "how are you doing?"], ["what is your name", "who made you?", "when were you created?"], ["what are you made of?", "where do you live"]];
   
   this.replies = [["Hi", "I'm good", " I'm fine, trust you're too"], ["I am " + name, "My boss", " A very long time ago"], ["I'm made of a high level language", "That's none of your business. Goodbye!"]];
   this.chatBody = document.createElement("div");
