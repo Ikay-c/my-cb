@@ -43,6 +43,7 @@ function Mybot(name){
     var userMessage = obj.messageBox.value;
     obj.receive(userMessage);
     var userMsg = userMessage.toLowerCase();
+    var href = userMsg.split(' ');
     //console.log(userMessage);
     obj.messageBox.value = null;
     var x = 0;
@@ -52,9 +53,19 @@ function Mybot(name){
       while (y < innerMessage.length){
         var message = innerMessage[y];
         var check = message.includes(userMsg);
+        var check2 = userMsg.includes('alexei open');
+        var check3 = userMsg.includes('alexei call');
+        var check4 = userMsg.includes('alexei mail');
+        let last = href[href.length-1];
         if (check==true){
           var innerReplies = obj.replies[x];
           obj.botReply(innerReplies[y]);
+        } else if (check2 == true){
+          window.open(href.length-1);
+        } else if (check3 == true){
+          window.open("tel:" + last);
+        } else if (check4 == true){
+          window.open("mailto:" + last);
         }
         y++;
       }
