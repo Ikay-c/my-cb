@@ -61,7 +61,7 @@ function Mybot(name){
           var innerReplies = obj.replies[x];
           obj.botReply(innerReplies[y]);
         } else if (check2 == true){
-          window.open(href.length-1);
+          window.open(last);
         } else if (check3 == true){
           window.open("tel:" + last);
         } else if (check4 == true){
